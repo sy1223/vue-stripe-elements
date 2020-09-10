@@ -14,6 +14,7 @@ export const Stripe = {
   elements: null,
 
   confirmCardSetup: null,
+  confirmCardPayment: null,
 }
 
 export const baseStyle = {
@@ -73,6 +74,13 @@ export function create(elementType, key_or_stripe, options = {}) {
     data.payment_method.card = element
     Stripe.instance.confirmCardSetup(clientSecret, data)
   }
+
+  Stripe.confirmCardPayment = (clientSecret, data) => {
+    data.payment_method.card = element
+    Stripe.instance.confirmCardPayment(clientSecret, data)
+  }
+
+  
   
   return element
 }
@@ -93,4 +101,5 @@ export function destroy() {
     Stripe.createPaymentMethod = null
 
     Stripe.confirmCardSetup = null
+    String.confirmCardPayment = null
 }

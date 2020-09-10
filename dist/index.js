@@ -111,11 +111,14 @@
             }, s.confirmCardSetup = function(e, t) {
                 t.payment_method.card = o
                 return s.instance.confirmCardSetup(e, t)
+            }, s.confirmCardPayment = function(e, t) {
+                t.payment_method.card = o
+                return s.instance.confirmCardPayment(e, t)
             }, o
         }
 
         function u() {
-            s.instance = null, s.elements = null, s.createToken = null, s.createSource = null, s.retrieveSource = null, s.paymentRequest = null, s.redirectToCheckout = null, s.retrievePaymentIntent = null, s.handleCardPayment = null, s.handleCardSetup = null, s.handleCardAction = null, s.confirmPaymentIntent = null, s.createPaymentMethod = null, s.confirmCardSetup = null
+            s.instance = null, s.elements = null, s.createToken = null, s.createSource = null, s.retrieveSource = null, s.paymentRequest = null, s.redirectToCheckout = null, s.retrievePaymentIntent = null, s.handleCardPayment = null, s.handleCardSetup = null, s.handleCardAction = null, s.confirmPaymentIntent = null, s.createPaymentMethod = null, s.confirmCardSetup = null, s.confirmCardPayment = null
         }
         Object.defineProperty(t, "__esModule", {
             value: !0
@@ -140,6 +143,7 @@
                 confirmPaymentIntent: null,
                 createPaymentMethod: null,
                 confirmCardSetup: null,
+                confirmCardPayment: null,
                 elements: null
             },
             c = t.baseStyle = {
@@ -488,6 +492,9 @@
             },
             get confirmCardSetup() {
                 return o.Stripe.confirmCardSetup
+            },
+            get confirmCardPayment() {
+                return o.Stripe.confirmCardPayment
             }
         }
     }, function(e, t, n) {

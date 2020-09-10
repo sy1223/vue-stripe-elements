@@ -29,4 +29,5 @@ module.exports = {
   get createPaymentMethod() { return Stripe.createPaymentMethod },
 
   get confirmCardSetup() { return Stripe.confirmCardSetup },
+  get confirmCardPayment() { return Stripe.confirmCardPayment },
 }
